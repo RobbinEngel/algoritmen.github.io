@@ -1,1 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear search</title>
+</head>
+<body>
+    <script>
+        let hoeveelheid = prompt("Hoeveel getallen wil je in je reeks");
+        let reeks = [hoeveelheid];
+        let getal;
+        let lengte;
+        let x = 0;
+        let positie;
 
+        for(lengte=0; lengte < hoeveelheid; lengte++){
+            getal = Math.floor(Math.random() * 101);
+            reeks[lengte] = getal;
+        }
+        
+        let zoekterm = prompt("Welk getal wil je zoeken in de reeks");
+        while (x==0){
+            for (lengte = 0; lengte < hoeveelheid; lengte++){
+                if (reeks[lengte] == zoekterm){
+                    x
+                }
+            }
+        }
+    </script>
+</body>
+</html>
