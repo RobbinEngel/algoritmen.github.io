@@ -18,25 +18,25 @@
             getal = Math.floor(Math.random() * 101);
             reeks[lengte] = getal;
         }
-        
+
+        alert(reeks);
         let zoekterm = prompt("Welk getal wil je zoeken in de reeks");
         
         while (x==0){
             for (lengte = 0; lengte <= hoeveelheid; lengte++){
                 if (reeks[lengte] == zoekterm){
                     x=1;
-                    positie = lengte;
+                    positie == lengte;
                 } else if (lengte == hoeveelheid & x==0){
                     x=2
                 }
             }
         }
         
-        document.write(reeks);
-        if (x=1){
+        
+        if (x==1){
             document.write("Het getal is gevonden op plek" + positie);
-        }
-        if (x=2){
+        }else{
             document.write("Het getal is niet gevonden");
         }
     </script>
