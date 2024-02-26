@@ -23,9 +23,18 @@
         while (x==0){
             for (lengte = 0; lengte < hoeveelheid; lengte++){
                 if (reeks[lengte] == zoekterm){
-                    x
+                    x=1;
+                    positie = lengte;
+                } else if (lengte == 49 & x==0){
+                    x=-1
                 }
             }
+        }
+
+        if (x==1){
+            document.write("Het getal is gevonden op plek" && positie);
+        } else if (x==1){
+            document.write("Het getal is niet gevonden");
         }
     </script>
 </body>
