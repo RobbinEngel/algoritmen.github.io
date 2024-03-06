@@ -13,31 +13,44 @@
         let lengte;
         let x = 0;
         let positie;
+        let maximum;
 
+        //hier genereerd het script een lijst willekeurige getallen met ten grote van de aangegeven lengte
         for(lengte=0; lengte <= hoeveelheid; lengte++){
             getal = Math.floor(Math.random() * 101);
             reeks[lengte] = getal;
         }
 
+        //het programma laat de reeks zien zodat je gericht kunt zoeken/testen
         alert(reeks);
-        let zoekterm = prompt("Welk getal wil je zoeken in de reeks");
+
         
-        while (x==0){
-            for (lengte = 0; lengte <= hoeveelheid; lengte++){
-                if (reeks[lengte] == zoekterm){
-                    x=1;
-                    positie == lengte;
-                } else if (lengte == hoeveelheid & x==0){
-                    x=2
+        let zoekterm = prompt("Welk getal wil je zoeken in de reeks");
+        maximum = hoeveelheid-1;
+
+        //hier zoekt het programma naar een overeenkomend getal
+        while (x==0)
+        {
+            for (lengte = 0; lengte <= hoeveelheid; lengte++)
+            {
+                if (reeks[lengte] == zoekterm)
+                {
+                    x = 1;
+                    positie = lengte;
+                } else 
+                    if(lengte == maximum && x == 0 )
+                    {
+                        x = 10
+                    }
                 }
             }
-        }
         
         
+        //het programma controleert de waarde van x en geeft de juiste boodschap
         if (x==1){
-            document.write("Het getal is gevonden op plek" + positie);
+            window.alert("Het getal is gevonden op plek" + positie);
         }else{
-            document.write("Het getal is niet gevonden");
+            window.alert("Het getal is niet gevonden");
         }
     </script>
 </body>
