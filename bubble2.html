@@ -15,6 +15,7 @@
 
     
     let grootte = prompt("hoeveel getallen wil je?");
+    
     let reeks = [grootte];
     let teller;
 
@@ -25,18 +26,32 @@
         reeks[teller] = getal;
     }
     alert(reeks);
+
+    let taak = prompt("Wilt u van groot naar klein (vul dan in groot) of van klein naar groot (vul dan in klein)")
     while (controle != grootte - 1) {
         controle = 0;
         for (teller = 0; teller <= grootte - 2; teller++) {
             let volgende;
 
             volgende = reeks[teller + 1];
-            if (reeks[teller] > volgende) {
+
+            if(taak == "klein")
+            {
+                if (reeks[teller] > volgende) {
+                reeks[teller + 1] = reeks[teller];
+                reeks[teller] = volgende;
+                } else {
+                controle = controle + 1;
+                }
+            }else {
+                if (reeks[teller] > volgende) {
                 reeks[teller + 1] = reeks[teller];
                 reeks[teller] = volgende;
             } else {
                 controle = controle + 1;
             }
+            }
+            
         }
     }
     alert(reeks);
