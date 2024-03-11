@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bubble</title>
+</head>
+<body>
+    <script>
+
+    let controle;
+
+    controle = 0;
+    
+
+    
+    let grootte = prompt("hoeveel getallen wil je?");
+    let reeks = [grootte];
+    let teller;
+
+    for (teller = 0; teller <= grootte - 1; teller++) {
+        let getal;
+
+        getal = Math.floor(Math.random() * 99);
+        reeks[teller] = getal;
+    }
+    alert(reeks);
+    while (controle != grootte - 1) {
+        controle = 0;
+        for (teller = 0; teller <= grootte - 2; teller++) {
+            let volgende;
+
+            volgende = reeks[teller + 1];
+            if (reeks[teller] > volgende) {
+                reeks[teller + 1] = reeks[teller];
+                reeks[teller] = volgende;
+            } else {
+                controle = controle + 1;
+            }
+        }
+    }
+    alert(reeks);
+
+
+    </script>
+</body>
+</html>
