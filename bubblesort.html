@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble sort</title>
+</head>
+<body>
+    <script>
+        let hoeveelheid = prompt("Hoeveel getallen wil je in je reeks");
+        let reeks = [hoeveelheid];
+        let getal;
+        let lengte;
+        let controle = 0;
+       
+
+        
+        //hier genereerd het script een lijst willekeurige getallen met ten grote van de aangegeven lengte
+        for(lengte=0; lengte <= hoeveelheid-1; lengte++){
+            getal = Math.floor(Math.random() * 101);
+            reeks[lengte] = getal;
+        }
+
+        //het programma laat de reeks zien zodat je gericht kunt zoeken/testen
+        alert(reeks);
+        
+        while(controle!=hoeveelheid){
+            controle = 0;
+            for(lengte = 0; lengte<=hoeveelheid-2; lengte++){
+                let volgende;
+                volgende = reeks[lengte+1];
+
+                if(reeks[lengte]>volgende){
+                    reeks[lengte+1] = reeks[lengte]
+                }else{
+                    controle = controle+1;
+                }
+            }
+        }
+
+        alert(reeks);
+    </script>
+</body>
+</html>
