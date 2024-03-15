@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Functie om een array van de opgegeven grootte te maken en te initialiseren
+        function createArray(size) {
+            var arr = [];
+            for (var i = 0; i < size; i++) {
+                arr.push(Math.floor(Math.random() * 100)); // Willekeurige getallen tussen 0 en 99
+            }
+            return arr;
+        }
+
+        // Array aanmaken en sorteren
+        var reeks = createArray(50).sort((a, b) => a - b);
+
+        // Het getal dat gezocht wordt invoeren
+        var gekozengetal = parseInt(prompt("Welk getal zoek je? Kies 0-99."));
+
+        // Binair zoeken
+        var start = 0;
+        var eind = reeks.length - 1;
+        var gevonden = false;
+        var midden, plek;
+
+        while (start <= eind) {
+            midden = Math.floor((start + eind) / 2);
+            if (gekozengetal === reeks[midden]) {
+                plek = midden + 1;
+                gevonden = true;
+                break;
+            } else if (gekozengetal > reeks[midden]) {
+                start = midden + 1;
+            } else {
+                eind = midden - 1;
+            }
+        }
+
+        // Resultaat weergeven
+        if (gevonden) {
+            window.alert("Nummer " + gekozengetal + " staat erin op plek " + plek);
+        } else {
+            window.alert(gekozengetal + " staat er niet in.");
+        }
+    </script>
+</body>
+</html>
